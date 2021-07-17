@@ -34,13 +34,13 @@ function hasMutation(dna){
             sequence.push(tabla[j][i]+tabla[j+1][i-1]+tabla[j+2][i-2]+tabla[j+3][i-3])
         }
     }
-    for(let j = 0; j<sequence.length; j++){
-        for(let i = 0; i<sequence.length; i++)
-            if(j!=i && sequence[j]==sequence[i]){
-                mutation = true
-            }
-                
+    var m=0
+    for(let value of sequence){
+        if(value=="AAAA" || value=="TTTT" || value=="GGGG" || value=="CCCC")
+            m+=1          
     }
+    if(m>1)
+        mutation=true 
     return mutation
 } 
 
