@@ -47,6 +47,11 @@ app.get('/api/stats', async (req, res) => {
     })
 })
 
+app.get('/api/test', (req, res) => {
+
+    res.json("hello world")
+})
+
 app.listen(app.get('port'), () => {
   console.log(`server on port ${app.get('port')}`)
 })
