@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const port = 3000
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.json());
@@ -45,11 +44,6 @@ app.get('/api/stats', async (req, res) => {
     res.json({
         "count_mutation" : count_mutation, "count_no_mutation" : count_no_mutation, "ratio" : ((count_mutation*100)/(count_no_mutation+count_mutation))/100
     })
-})
-
-app.get('/api/test', (req, res) => {
-
-    res.json("hello world")
 })
 
 app.listen(app.get('port'), () => {
